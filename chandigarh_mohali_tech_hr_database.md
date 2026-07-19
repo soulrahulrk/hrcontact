@@ -297,5 +297,28 @@ Tomorrow is **Tuesday 2026-07-21, a normal working day**, so Mon–Sat walk-ins 
 
 ---
 
+## 📞 Confirm-before-you-go — verified public contacts (call/email FIRST)
+
+**All numbers/emails below are from public sources (company sites, JustDial/IndiaMART/Sulekha, job listings) — none are guessed.** Where a field says "Not found publicly," no verbatim public contact existed. **Always call or email to confirm the role + walk-in slot before you travel** — and to ask for the exact floor/room.
+
+| Company | Best number to call | Email | Address | What to say / note |
+|---|---|---|---|---|
+| **Code Unfold Solutions** (Mohali · WALK-IN) | ☎ +91 79886 72156 | info@codeunfold.com | SCO 529, Top Floor, Sector 70, Mohali 160071 | "Is the Junior Python (web-scraping) fresher walk-in still on this week? What time today/tomorrow?" |
+| **Hilt Web Solutions** (Mohali · WALK-IN) | ☎ +91 172 402 8670 | hiltweb@gmail.com · indeedhiltweb@gmail.com | SCO 31, Franco Hotel Rd, Sector 55, Phase 1, Mohali 160055 | Email your resume first, then call to confirm the walk-in timing + address |
+| **LDT Technology** (Zirakpur) | ☎ +91 78890 64741 | career@ldttechnology.com | Zirakpur, Punjab | Email resume to career@; ask about the Backend Python/Django opening |
+| **DigiMantra Labs** (Mohali) | ☎ +91 172 613 1700 | apply via careers.digimantra.com | Plot 8B, Sector 74, Industrial Area, Mohali 160055 | Apply on portal, then call reception and ask for HR/Talent Acquisition |
+| **oCode Technologies** (Mohali) | ☎ +91 85805 41322 *(jobs line)* | hi@ocode.co | E-51, Phase 8, Industrial Area, Mohali 160059 | Dedicated jobs line + email; office hours Mon–Fri 9am–7pm |
+| **RV Technologies** (Chandigarh) | ☎ +91 89685 19881 | via rvtechnologies.com/contact-us/ | Chandigarh | Apply at rvtechnologies.com/career/python-developer/. ⚠️ A separate **"RV Technologies Softwares"** at Sector 40-B (☎ +91 98764 29881 · contact@rvtechnologies.co.in) may be a *different/older* firm — confirm which one actually has your role. |
+| **Emerson** (Chandigarh) | — *(MNC — no direct confirm line)* | apply via Naukri / talent.com listing | IT Park, Chandigarh | Large firm: apply online; a recruiter screens and calls you. **No walk-in.** |
+| **Vibe Internet Solutions** (Mohali) | Not found publicly | apply via Indeed / LinkedIn / Internshala | Plot C-203, Phase 8B, Mohali 160055 | No verified public phone/email — apply through the job boards |
+| **Arete Technologies** (Panchkula) | Not found publicly | apply via Internshala | Square Building, Plot 201, Industrial Area Phase 2, Panchkula 134113 | Staffing/consulting firm — apply via portal |
+
+### ⚠️ Corrections found while verifying contacts (honesty check)
+Two companies added in the tricity pass **do not survive contact-verification** as local employers — treat them as excluded, not targets:
+- **Pyramid Global Technologies** — is **Sydney, Australia-based** (☎ +61 2 9135 4857). No verified Panchkula office; the "Pyramid" at Panchkula Industrial Area is an **unrelated power-electronics firm** (Pyramid Power Electronics, ☎ 0172-2582343). The job-board "Panchkula Python employer" tag was a false positive.
+- **Techgropse** — official offices are **Noida / Madurai / Hadapsar (Pune)**; no verified Panchkula office. India contact info@techgropse.com / +91 99111 38726 routes to **Noida**, not Panchkula.
+
+---
+
 ### Notable exclusions (verified NOT to have a real Chandigarh/Mohali office)
 Kwalee, Xebia, Sopra Steria, SpringPeople, Synoptek, Powerweave, Cognizant (IT-park address unverified), Cambium Networks, GlobalLogic, Coforge, EXL, Fingent, Publicis Sapient, Xoriant, "Netsol Technologies" (Lahore-HQ, distinct from Net Solutions), Cavisson Systems, Amaze Systems, Prodapt, Innovapptive, Miratech, MyOperator, Vinove, Elightwalk, Cambridge Technology, RG Softech, Wisdom Overseas, MedhaVi Skills, Mobtexting, Coding Ninjas (address collision with unrelated firm), VAYUZ Technologies (actual HQ Noida/Delhi).
