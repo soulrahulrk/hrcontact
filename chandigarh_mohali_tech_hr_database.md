@@ -262,56 +262,49 @@ The original scope deliberately **excluded Panchkula** (and Zirakpur). This pass
 
 ---
 
-## ⭐ Go tomorrow / apply this week — actively-hiring Python fresher shortlist (as of 2026-07-20)
+## ⭐ Go tomorrow / apply this week — Python fresher action list (as of 2026-07-20)
 
-Tomorrow is **Tuesday 2026-07-21, a normal working day**, so Mon–Sat walk-ins apply. This section is the *action list*: places advertising **open Python/dev fresher roles right now** or **direct walk-ins**. 
+Tomorrow is **Tuesday 2026-07-21, a normal working day**, so Mon–Sat walk-ins apply. This is your single **action + contact sheet**: who to call/email, their website, and a **Google Maps link** for every address.
 
-⚠️ **Verify before you travel.** Walk-in company names, addresses, and timings below come from Indeed/job-board listings, not a phone confirmation. **Call or message first** to confirm the slot is still live and get the exact address — job-board walk-in dates go stale fast.
+⚠️ **Verify before you travel.** Numbers/emails below are all from **public sources** (company sites, JustDial/IndiaMART/Sulekha, job listings) — **none are guessed**. Walk-in timings come from job boards, so **call or email first** to confirm the slot is live and get the exact floor/room. Where a cell shows "-" or "apply via …", no direct public phone/email existed — use the portal.
 
-### A. Direct walk-in interviews (Mohali/Chandigarh — confirm slot first)
-| Company | Role | Walk-in window (as listed) | Action before you go |
-|---|---|---|---|
-| **Code Unfold Solutions** | Junior Python (Web Scraping), freshers | Advertised Mon–Sat, 11:00 AM–5:00 PM | Search "Code Unfold Solutions" on Indeed → confirm current listing + address; call to confirm slot |
-| **Hilt Web Solutions** | Full-time fresher dev roles | Advertised Mon–Sat, 11:00 AM–5:00 PM | Same — confirm listing is still active for this week before travelling |
+**Type key:** `WALK-IN` = advertised direct walk-in · `AI/Python` = strong AI/Python fresher target · `Apply` = live role, apply online.
 
-*(Indeed shows ~140+ "walk-in, freshers, Python" listings for Mohali — search `walkin interview freshers python developer Mohali` on Indeed the morning you plan to go and filter to "last 3 days".)*
+| Company | Type | Call | Email / Apply | Website | Address (map link) | Notes |
+|---|---|---|---|---|---|---|
+| **Code Unfold Solutions** | WALK-IN | ☎ +91 79886 72156 | info@codeunfold.com | [codeunfold.com](https://codeunfold.com) | SCO 529, Top Floor, Sector 70, Mohali 160071 · [map](https://www.google.com/maps/search/?api=1&query=SCO+529%2C+Top+Floor%2C+Sector+70%2C+Mohali+160071) | Jr Python (web-scraping) freshers; walk-in Mon-Sat 11-5 (call first) |
+| **Hilt Web Solutions** | WALK-IN | ☎ +91 172 402 8670 | hiltweb@gmail.com | [hiltweb.com](https://hiltweb.com) | SCO 31, Franco Hotel Rd, Sector 55, Phase 1, Mohali 160055 · [map](https://www.google.com/maps/search/?api=1&query=SCO+31%2C+Franco+Hotel+Rd%2C+Sector+55%2C+Phase+1%2C+Mohali+160055) | Fresher dev roles; walk-in Mon-Sat 11-5 (email resume first) |
+| **Softleoai** | AI/Python | ☎ +91 99889 11190 | hr@softleoai.com | [softleoai.com](https://softleoai.com) | D-141, Phase 7, Sector 73, Mohali 160055 · [map](https://www.google.com/maps/search/?api=1&query=D-141%2C+Phase+7%2C+Sector+73%2C+Mohali+160055) | Active Python/AI-ML internship pipeline - top pick |
+| **Grazitti Interactive** | AI/Python | ☎ +91 172 504 8500 | careers via grazitti.com/company/careers | [grazitti.com](https://grazitti.com) | Plot 19, HSIIDC Technology Park, Sector 22, Panchkula 134104 · [map](https://www.google.com/maps/search/?api=1&query=Plot+19%2C+HSIIDC+Technology+Park%2C+Sector+22%2C+Panchkula+134104) | Also Landmark Plaza, Sector 62, Mohali; Agentic-AI roles |
+| **XenonStack** | AI/Python | - | apply via xenonstack.jobs | [xenonstack.com](https://xenonstack.com) | #3038 Ajanta Enclave D, Sector 51-D, Chandigarh 160047 · [map](https://www.google.com/maps/search/?api=1&query=%233038+Ajanta+Enclave+D%2C+Sector+51-D%2C+Chandigarh+160047) | Pure-play AI; also STPI C-184, Phase 8, Sector 75, Mohali |
+| **Net Solutions** | AI/Python | ☎ +91 172 4315000 | careers via netsolutions.com/careers | [netsolutions.com](https://netsolutions.com) | Site 15, Phase 1, Rajiv Gandhi Chandigarh Tech Park, Chandigarh 160101 · [map](https://www.google.com/maps/search/?api=1&query=Site+15%2C+Phase+1%2C+Rajiv+Gandhi+Chandigarh+Tech+Park%2C+Chandigarh+160101) | GenAI mentioned in JDs |
+| **Antier Solutions** | AI/Python | ☎ +91 172 4008460 | careers via antiersolutions.com/career | [antiersolutions.com](https://antiersolutions.com) | E-196, Phase 8B, Industrial Area, Mohali 160059 · [map](https://www.google.com/maps/search/?api=1&query=E-196%2C+Phase+8B%2C+Industrial+Area%2C+Mohali+160059) | AI + blockchain; junior WFO roles |
+| **smartData Enterprises** | AI/Python | - | careers via smartdatainc.com/careers | [smartdatainc.com](https://smartdatainc.com) | Plot I-23, IT City, Sector 83 Alpha, SAS Nagar, Mohali 140306 · [map](https://www.google.com/maps/search/?api=1&query=Plot+I-23%2C+IT+City%2C+Sector+83+Alpha%2C+SAS+Nagar%2C+Mohali+140306) | AI-native; annual fresher program |
+| **Netsmartz** | AI/Python | - | careers via netsmartz.com/career-page | [netsmartz.com](https://netsmartz.com) | Plot 10, Rajiv Gandhi Tech Park, Chandigarh 160101 · [map](https://www.google.com/maps/search/?api=1&query=Plot+10%2C+Rajiv+Gandhi+Tech+Park%2C+Chandigarh+160101) | Also IT-C-6, Sector 67, Mohali; high intern volume |
+| **SourceFuse Technologies** | AI/Python | ☎ 0172 503 2044 | careers via sourcefuse.com/careers | [sourcefuse.com](https://sourcefuse.com) | C-204, Atrium, Sector 74, Mohali 140308 · [map](https://www.google.com/maps/search/?api=1&query=C-204%2C+Atrium%2C+Sector+74%2C+Mohali+140308) | AWS/cloud-AI adjacent |
+| **IDS Infotech** | AI/Python | ☎ +91 172 520 2903 | careers.idsil.com | [idsil.com](https://idsil.com) | Rajiv Gandhi Chandigarh Tech Park, Chandigarh 160003 · [map](https://www.google.com/maps/search/?api=1&query=Rajiv+Gandhi+Chandigarh+Tech+Park%2C+Chandigarh+160003) | Explicit freshers/trainees listing |
+| **Zapbuild Technologies** | AI/Python | ☎ +91 93010 10197 | connect@zapbuild.com | [zapbuild.com](https://zapbuild.com) | E-237, Phase 8B, Sector 74, Mohali 160071 · [map](https://www.google.com/maps/search/?api=1&query=E-237%2C+Phase+8B%2C+Sector+74%2C+Mohali+160071) | Explicit 'Freshers Graduates' listing |
+| **The Brihaspati Infotech** | AI/Python | ☎ +91 8146052020 | hr@brihaspatitech.com | [brihaspatitech.com](https://brihaspatitech.com) | Sector 74, Phase 8B, Mohali 160055 · [map](https://www.google.com/maps/search/?api=1&query=Sector+74%2C+Phase+8B%2C+Mohali+160055) | Live Python Fresher role |
+| **ToXSL Technologies** | AI/Python | ☎ +91 95691 27788 | hr@toxsl.com | [toxsl.com](https://toxsl.com) | C-127, Phase 8, Sector 73, Mohali 160071 · [map](https://www.google.com/maps/search/?api=1&query=C-127%2C+Phase+8%2C+Sector+73%2C+Mohali+160071) | ~90% freshers; job-guarantee training |
+| **Apptunix** | AI/Python | - | hr@apptunix.com | [apptunix.com](https://apptunix.com) | 3rd Floor, C-127, Phase 8, Sector 73, Mohali 160071 · [map](https://www.google.com/maps/search/?api=1&query=3rd+Floor%2C+C-127%2C+Phase+8%2C+Sector+73%2C+Mohali+160071) | Python for AI/ML role advertised |
+| **Seasia Infotech** | AI/Python | - | info@seasiainfotech.com | [seasiainfotech.com](https://seasiainfotech.com) | C-136, Industrial Area, Phase 8, Mohali 160071 · [map](https://www.google.com/maps/search/?api=1&query=C-136%2C+Industrial+Area%2C+Phase+8%2C+Mohali+160071) | AI/blockchain/QA stack |
+| **Terafac Technologies** | AI/Python | - | contact via terafac.com/contact | [terafac.com](https://terafac.com) | Industrial Area Phase 1, Chandigarh 160001 · [map](https://www.google.com/maps/search/?api=1&query=Industrial+Area+Phase+1%2C+Chandigarh+160001) | AI-vision robotics; funded |
+| **Webtunix AI** | AI/Python | - | contact via webtunix.com/contact-us | [webtunix.com](https://webtunix.com) | Plot 204, Industrial Area Phase 8B, Mohali 160055 · [map](https://www.google.com/maps/search/?api=1&query=Plot+204%2C+Industrial+Area+Phase+8B%2C+Mohali+160055) | ML/data-science company |
+| **oCode Technologies** | Apply | ☎ +91 85805 41322 | hi@ocode.co | [ocode.co](https://ocode.co) | E-51, Phase 8, Industrial Area, Mohali 160059 · [map](https://www.google.com/maps/search/?api=1&query=E-51%2C+Phase+8%2C+Industrial+Area%2C+Mohali+160059) | Python + AI/ML/LLM dev; jobs line Mon-Fri 9-7 |
+| **LDT Technology** | Apply | ☎ +91 78890 64741 | career@ldttechnology.com | [ldttechnology.com](https://ldttechnology.com) | Zirakpur, Punjab · [map](https://www.google.com/maps/search/?api=1&query=Zirakpur%2C+Punjab) | Backend Python/Django |
+| **DigiMantra Labs** | Apply | ☎ +91 172 613 1700 | careers.digimantra.com | [digimantra.com](https://digimantra.com) | Plot 8B, Sector 74, Industrial Area, Mohali 160055 · [map](https://www.google.com/maps/search/?api=1&query=Plot+8B%2C+Sector+74%2C+Industrial+Area%2C+Mohali+160055) | Software Engineer Intern + Python |
+| **RV Technologies** | Apply | ☎ +91 89685 19881 | via rvtechnologies.com/contact-us | [rvtechnologies.com](https://rvtechnologies.com) | Chandigarh · [map](https://www.google.com/maps/search/?api=1&query=Chandigarh) | Live Python Developer role |
+| **Emerson** | Apply | - (MNC) | apply via Naukri / talent.com | [emerson.com](https://emerson.com) | IT Park, Chandigarh · [map](https://www.google.com/maps/search/?api=1&query=IT+Park%2C+Chandigarh) | React/Python 0-2 yrs + intern->FTE; no walk-in |
+| **Vibe Internet Solutions** | Apply | - | apply via Indeed / LinkedIn | - | Plot C-203, Phase 8B, Mohali 160055 · [map](https://www.google.com/maps/search/?api=1&query=Plot+C-203%2C+Phase+8B%2C+Mohali+160055) | AI/Python Intern (LLM/RAG) Rs20k/mo |
+| **Arete Technologies** | Apply | - | apply via Internshala | [arete-tech.com](https://arete-tech.com) | Square Building, Plot 201, Industrial Area Phase 2, Panchkula 134113 · [map](https://www.google.com/maps/search/?api=1&query=Square+Building%2C+Plot+201%2C+Industrial+Area+Phase+2%2C+Panchkula+134113) | Fresher software/IT roles |
 
-### B. Apply online today — live fresher/0–2 yr Python roles (high response odds)
-| Company | Role | Where to apply |
-|---|---|---|
-| **Emerson (Chandigarh)** | React/Python Developer, 0–2 yrs + intern→FTE | Naukri listing "React/Python Developer – Emerson Innovation Center Chandigarh" / talent.com |
-| **RV Technologies (Chandigarh/Panchkula)** | Python Developer (live) | rvtechnologies.com/career/python-developer/ · ☎ +91 8968519881 |
-| **LDT Technology (Zirakpur)** | Backend Python/Django Developer | LinkedIn /company/ldt-technology-pvt-ltd → Jobs; or company site |
-| **DigiMantra Labs (Mohali)** | Software Engineer – Intern / Python | careers.digimantra.com |
-| **Vibe Internet Solutions (Mohali)** | AI/Python Intern (LLM/RAG), ₹20k/mo | Already in DB — apply via their careers/Internshala |
-| **oCode Technologies (Mohali)** | Python + AI/ML/LLM Dev | Already in DB — Phase 8 Mohali careers |
-| **Arete Technologies (Panchkula)** | Fresher software/IT roles | Internshala / careers.smartrecruiters.com/AreteTechnologiesInc |
-
-### C. Daily-refresh job-board searches (do these each morning)
+### Daily-refresh job-board searches (do these each morning)
 - Indeed: `python fresher Mohali` / `python fresher Chandigarh` / `python developer Panchkula` / `python fresher Zirakpur` — filter **"Last 3 days"**
 - Internshala: Python-developer jobs/internships in Zirakpur, Mohali, Chandigarh (fresher filter)
 - LinkedIn Jobs: "Panchkula fresher" (355+ listings) + set a job alert for `Python Chandigarh Mohali fresher`
 - Naukri: `Python developer 0-1 years Chandigarh/Mohali`
 
-**Reality check:** the highest reply odds are still the *named-contact* companies in the shortlist near the top of this file (Grazitti, Softleoai, XenonStack, Net Solutions, etc.) — pair a LinkedIn message to a named HR with an online application. Use walk-ins/board applies as volume on top of that.
-
----
-
-## 📞 Confirm-before-you-go — verified public contacts (call/email FIRST)
-
-**All numbers/emails below are from public sources (company sites, JustDial/IndiaMART/Sulekha, job listings) — none are guessed.** Where a field says "Not found publicly," no verbatim public contact existed. **Always call or email to confirm the role + walk-in slot before you travel** — and to ask for the exact floor/room.
-
-| Company | Best number to call | Email | Address | What to say / note |
-|---|---|---|---|---|
-| **Code Unfold Solutions** (Mohali · WALK-IN) | ☎ +91 79886 72156 | info@codeunfold.com | SCO 529, Top Floor, Sector 70, Mohali 160071 | "Is the Junior Python (web-scraping) fresher walk-in still on this week? What time today/tomorrow?" |
-| **Hilt Web Solutions** (Mohali · WALK-IN) | ☎ +91 172 402 8670 | hiltweb@gmail.com · indeedhiltweb@gmail.com | SCO 31, Franco Hotel Rd, Sector 55, Phase 1, Mohali 160055 | Email your resume first, then call to confirm the walk-in timing + address |
-| **LDT Technology** (Zirakpur) | ☎ +91 78890 64741 | career@ldttechnology.com | Zirakpur, Punjab | Email resume to career@; ask about the Backend Python/Django opening |
-| **DigiMantra Labs** (Mohali) | ☎ +91 172 613 1700 | apply via careers.digimantra.com | Plot 8B, Sector 74, Industrial Area, Mohali 160055 | Apply on portal, then call reception and ask for HR/Talent Acquisition |
-| **oCode Technologies** (Mohali) | ☎ +91 85805 41322 *(jobs line)* | hi@ocode.co | E-51, Phase 8, Industrial Area, Mohali 160059 | Dedicated jobs line + email; office hours Mon–Fri 9am–7pm |
-| **RV Technologies** (Chandigarh) | ☎ +91 89685 19881 | via rvtechnologies.com/contact-us/ | Chandigarh | Apply at rvtechnologies.com/career/python-developer/. ⚠️ A separate **"RV Technologies Softwares"** at Sector 40-B (☎ +91 98764 29881 · contact@rvtechnologies.co.in) may be a *different/older* firm — confirm which one actually has your role. |
-| **Emerson** (Chandigarh) | — *(MNC — no direct confirm line)* | apply via Naukri / talent.com listing | IT Park, Chandigarh | Large firm: apply online; a recruiter screens and calls you. **No walk-in.** |
-| **Vibe Internet Solutions** (Mohali) | Not found publicly | apply via Indeed / LinkedIn / Internshala | Plot C-203, Phase 8B, Mohali 160055 | No verified public phone/email — apply through the job boards |
-| **Arete Technologies** (Panchkula) | Not found publicly | apply via Internshala | Square Building, Plot 201, Industrial Area Phase 2, Panchkula 134113 | Staffing/consulting firm — apply via portal |
+**Reality check:** best reply odds are the *named-contact* companies in the shortlist near the top of this file — pair a LinkedIn message to a named HR with the application above.
 
 ### ⚠️ Corrections found while verifying contacts (honesty check)
 Two companies added in the tricity pass **do not survive contact-verification** as local employers — treat them as excluded, not targets:
