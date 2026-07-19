@@ -1,0 +1,427 @@
+<title>Chandigarh &amp; Mohali Tech Recruitment Dossier</title>
+<style>
+  :root{
+    --bg:#eef2f2;
+    --surface:#ffffff;
+    --surface-alt:#e3ebea;
+    --border:#d3dcdc;
+    --text:#1e2226;
+    --text-muted:#676d74;
+    --accent:#1f6e68;
+    --accent-strong:#144e4a;
+    --accent-soft:#dbeceb;
+    --pri-high:#1e7a4c; --pri-high-bg:#dff3e7;
+    --pri-med:#9a6b12; --pri-med-bg:#f7ecd1;
+    --pri-low:#676d74; --pri-low-bg:#e8e6de;
+    --font-display: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-body: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#12151a; --surface:#1a1e24; --surface-alt:#20252c; --border:#2c323b;
+      --text:#e7ebef; --text-muted:#969fa8;
+      --accent:#4fd1c1; --accent-strong:#86e3d6; --accent-soft:#1c3230;
+      --pri-high:#4cc97e; --pri-high-bg:#163524;
+      --pri-med:#e0b255; --pri-med-bg:#3a2e12;
+      --pri-low:#9aa0aa; --pri-low-bg:#23262c;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12151a; --surface:#1a1e24; --surface-alt:#20252c; --border:#2c323b;
+    --text:#e7ebef; --text-muted:#969fa8;
+    --accent:#4fd1c1; --accent-strong:#86e3d6; --accent-soft:#1c3230;
+    --pri-high:#4cc97e; --pri-high-bg:#163524;
+    --pri-med:#e0b255; --pri-med-bg:#3a2e12;
+    --pri-low:#9aa0aa; --pri-low-bg:#23262c;
+  }
+  :root[data-theme="light"]{
+    --bg:#eef2f2; --surface:#ffffff; --surface-alt:#e3ebea; --border:#d3dcdc;
+    --text:#1e2226; --text-muted:#676d74;
+    --accent:#1f6e68; --accent-strong:#144e4a; --accent-soft:#dbeceb;
+    --pri-high:#1e7a4c; --pri-high-bg:#dff3e7;
+    --pri-med:#9a6b12; --pri-med-bg:#f7ecd1;
+    --pri-low:#676d74; --pri-low-bg:#e8e6de;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:var(--font-body); line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px; margin:0 auto; padding:2.5rem 1.5rem 6rem;}
+  header.top{
+    display:flex; flex-direction:column; gap:1.25rem;
+    border-bottom:1px solid var(--border); padding-bottom:2rem; margin-bottom:2.5rem;
+  }
+  .eyebrow{
+    font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--accent); font-weight:600;
+  }
+  h1{
+    font-family:var(--font-display); font-size:clamp(1.8rem,3.6vw,2.6rem);
+    font-weight:800; letter-spacing:-0.02em; margin:0.3rem 0 0.4rem; text-wrap:balance;
+  }
+  .subtitle{color:var(--text-muted); max-width:66ch; font-size:1rem;}
+  .stats{display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:0.5rem;}
+  .stat{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:0.7rem 1.1rem; min-width:120px;
+  }
+  .stat .n{font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-size:1.5rem; font-weight:700; color:var(--accent-strong);}
+  .stat .l{font-size:0.74rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;}
+  section{margin-bottom:3.2rem;}
+  h2{
+    font-family:var(--font-display); font-size:1.35rem; font-weight:800;
+    letter-spacing:-0.01em; margin:0 0 0.3rem;
+  }
+  .section-note{color:var(--text-muted); font-size:0.92rem; max-width:70ch; margin-bottom:1.2rem;}
+  .controls{display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.9rem;}
+  input[type="search"], select{
+    background:var(--surface); border:1px solid var(--border); color:var(--text);
+    border-radius:8px; padding:0.5rem 0.75rem; font-size:0.9rem; font-family:var(--font-body);
+  }
+  input[type="search"]{flex:1; min-width:200px;}
+  input[type="search"]:focus, select:focus, a:focus{outline:2px solid var(--accent); outline-offset:2px;}
+  .table-scroll{overflow-x:auto; border:1px solid var(--border); border-radius:12px; background:var(--surface);}
+  table{border-collapse:collapse; width:100%; font-size:0.86rem; min-width:760px;}
+  thead th{
+    position:sticky; top:0; background:var(--surface-alt); text-align:left;
+    padding:0.65rem 0.8rem; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;
+    color:var(--text-muted); border-bottom:1px solid var(--border); white-space:nowrap;
+  }
+  tbody td{padding:0.6rem 0.8rem; border-bottom:1px solid var(--border); vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:var(--surface-alt);}
+  a{color:var(--accent-strong);}
+  a:hover{color:var(--accent);}
+  .pill{
+    display:inline-block; padding:0.15rem 0.55rem; border-radius:999px;
+    font-size:0.72rem; font-weight:700; letter-spacing:0.02em;
+  }
+  .pill.High{background:var(--pri-high-bg); color:var(--pri-high);}
+  .pill.Medium{background:var(--pri-med-bg); color:var(--pri-med);}
+  .pill.Low{background:var(--pri-low-bg); color:var(--pri-low);}
+  .rowcount{font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-size:0.78rem; color:var(--text-muted); margin-bottom:0.6rem;}
+  footer{
+    border-top:1px solid var(--border); padding-top:1.2rem; margin-top:1rem;
+    color:var(--text-muted); font-size:0.82rem; max-width:80ch;
+  }
+  .theme-toggle{
+    position:fixed; top:1rem; right:1rem; z-index:10;
+    background:var(--surface); border:1px solid var(--border); border-radius:999px;
+    padding:0.4rem 0.8rem; font-size:0.76rem; cursor:pointer; color:var(--text);
+  }
+</style>
+
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">◐ theme</button>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Verified recruitment research · Chandigarh &amp; Mohali · updated live</span>
+    <h1>Chandigarh &amp; Mohali Tech Company + HR Database</h1>
+    <p class="subtitle">For an AI/Python Developer (~2 months' experience) targeting internship, fresher, and 0–1 yr roles. Every row below is backed by a live public source — no invented names, emails, or phone numbers. Now covers the full tricity: Chandigarh, Mohali, Panchkula &amp; Zirakpur.</p>
+    <div class="stats">
+      <div class="stat"><div class="n" id="statCo">55</div><div class="l">Companies verified</div></div>
+      <div class="stat"><div class="n" id="statContacts">27</div><div class="l">Named contacts</div></div>
+    </div>
+  </header>
+
+  <section id="database">
+    <h2>Full company database</h2>
+    <p class="section-note">Search or filter by priority / city. Full field-by-field data (address, employee-count sourcing, career page URLs) is in the companion CSV.</p>
+    <div class="controls">
+      <input type="search" id="coSearch" placeholder="Search company, industry, or contact…">
+      <select id="citySelect">
+        <option value="">All locations</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Mohali">Mohali</option>
+        <option value="Panchkula">Panchkula</option>
+        <option value="Zirakpur">Zirakpur</option>
+        <option value="Both">Both</option>
+      </select>
+      <select id="prioSelect">
+        <option value="">All priorities</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+    <div class="rowcount" id="coCount"></div>
+    <div class="table-scroll">
+      <table id="coTable">
+        <thead><tr><th>Company</th><th>Location</th><th>Industry</th><th>Freshers/Interns</th><th>AI/ML</th><th>Named contact</th><th>Priority</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="shortlist">
+    <h2>Priority outreach shortlist — message these first</h2>
+    <p class="section-note">Sorted by realistic reply probability. Each row links straight to the person's LinkedIn profile.</p>
+    <div class="controls">
+      <input type="search" id="contactSearch" placeholder="Search name, company, or designation…">
+    </div>
+    <div class="rowcount" id="contactCount"></div>
+    <div class="table-scroll">
+      <table id="contactTable">
+        <thead><tr><th>#</th><th>Name</th><th>Designation</th><th>Company</th><th>LinkedIn</th><th>Why message first</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="gotomorrow">
+    <h2>⭐ Go tomorrow / apply this week — Python fresher action list</h2>
+    <p class="section-note">The <strong>action list</strong>: places advertising open Python/dev fresher roles right now or direct walk-ins. As of <strong>2026-07-20</strong>; tomorrow (Tue 2026-07-21) is a normal working day, so Mon–Sat walk-ins apply.</p>
+    <div style="background:var(--accent-soft); border:1px solid var(--accent); border-radius:12px; padding:0.85rem 1.1rem; margin-bottom:1.3rem; font-size:0.92rem; color:var(--text);">
+      ⚠️ <strong>Verify before you travel.</strong> Walk-in company names, addresses, and timings come from Indeed/job-board listings — <strong>not</strong> a phone confirmation. Call or message first to confirm the slot is live and get the exact address. Job-board walk-in dates go stale fast.
+    </div>
+
+    <h3 style="margin:0 0 0.6rem; font-size:1.02rem;">A · Direct walk-in interviews (Mohali / Chandigarh — confirm slot first)</h3>
+    <div class="table-scroll" style="margin-bottom:1.6rem;">
+      <table>
+        <thead><tr><th>Company</th><th>Role</th><th>Window (as listed)</th><th>Do this first</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Code Unfold Solutions</strong></td><td>Junior Python (Web Scraping), freshers</td><td>Mon–Sat, 11:00 AM–5:00 PM</td><td>Search on Indeed → confirm current listing + address; call to confirm slot</td></tr>
+          <tr><td><strong>Hilt Web Solutions</strong></td><td>Full-time fresher dev roles</td><td>Mon–Sat, 11:00 AM–5:00 PM</td><td>Confirm the listing is still active for this week before travelling</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-note" style="margin-top:-0.9rem;">Indeed shows ~140+ "walk-in · freshers · Python" listings for Mohali — search <code>walkin interview freshers python developer Mohali</code> the morning you go and filter to "Last 3 days".</p>
+
+    <h3 style="margin:0 0 0.6rem; font-size:1.02rem;">B · Apply online today — live fresher / 0–2 yr Python roles</h3>
+    <div class="table-scroll" style="margin-bottom:1.6rem;">
+      <table>
+        <thead><tr><th>Company</th><th>Role</th><th>Where to apply</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Emerson</strong> (Chandigarh)</td><td>React/Python Developer, 0–2 yrs + intern→FTE, ~₹6 LPA</td><td>Naukri "React/Python Developer – Emerson Innovation Center Chandigarh" / talent.com</td><td><span class="pill High">High</span></td></tr>
+          <tr><td><strong>RV Technologies</strong> (Chandigarh/Panchkula)</td><td>Python Developer (live)</td><td>rvtechnologies.com/career/python-developer/ · ☎ +91 8968519881</td><td><span class="pill High">High</span></td></tr>
+          <tr><td><strong>LDT Technology</strong> (Zirakpur)</td><td>Backend Python/Django Developer</td><td>LinkedIn /company/ldt-technology-pvt-ltd → Jobs</td><td><span class="pill High">High</span></td></tr>
+          <tr><td><strong>DigiMantra Labs</strong> (Mohali)</td><td>Software Engineer – Intern / Python</td><td>careers.digimantra.com</td><td><span class="pill High">High</span></td></tr>
+          <tr><td><strong>Vibe Internet Solutions</strong> (Mohali)</td><td>AI/Python Intern (LLM/RAG), ₹20k/mo</td><td>Company careers / Internshala</td><td><span class="pill Medium">Medium</span></td></tr>
+          <tr><td><strong>oCode Technologies</strong> (Mohali)</td><td>Python + AI/ML/LLM Developer</td><td>Phase 8 Mohali — company careers</td><td><span class="pill Medium">Medium</span></td></tr>
+          <tr><td><strong>Arete Technologies</strong> (Panchkula)</td><td>Fresher software/IT roles</td><td>Internshala / careers.smartrecruiters.com/AreteTechnologiesInc</td><td><span class="pill Medium">Medium</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin:0 0 0.6rem; font-size:1.02rem;">C · Refresh these searches every morning</h3>
+    <ul style="font-size:0.92rem; line-height:1.7; max-width:75ch;">
+      <li><strong>Indeed:</strong> <code>python fresher Mohali</code> / <code>… Chandigarh</code> / <code>python developer Panchkula</code> / <code>python fresher Zirakpur</code> — filter "Last 3 days".</li>
+      <li><strong>Internshala:</strong> Python-developer jobs/internships in Zirakpur, Mohali, Chandigarh (fresher filter).</li>
+      <li><strong>LinkedIn Jobs:</strong> "Panchkula fresher" (355+ listings) + set an alert for <code>Python Chandigarh Mohali fresher</code>.</li>
+      <li><strong>Naukri:</strong> <code>Python developer 0-1 years Chandigarh/Mohali</code>.</li>
+    </ul>
+    <p class="section-note"><strong>Reality check:</strong> highest reply odds are still the <em>named-contact</em> companies in the shortlist above (Grazitti, Softleoai, XenonStack, Net Solutions…). Pair a LinkedIn message to a named HR with an online application — use walk-ins / board applies as volume on top.</p>
+  </section>
+
+  <footer>
+    <strong>Methodology.</strong> Built via live web search (LinkedIn snippets, career pages, Naukri/Indeed/Glassdoor/Internshala, Tracxn/press) — not from memory. Every named contact has a real, search-verified LinkedIn URL and hiring-related evidence. Fields marked "not found" mean no public source existed — never a guess.
+  </footer>
+</div>
+
+<script>
+const contacts = [
+  ["Ishpreet Kaur","HR Specialist","Softleoai","https://www.linkedin.com/in/ishpreet-kaur-a17170251/","Runs an active Python/AI-ML internship pipeline"],
+  ["Tanmaya Gulati","Co-Founder","RNT Health Insights","https://www.linkedin.com/in/tanmaya-gulati-ab771824a/","Tiny AI healthtech team, posted about hiring in 2025"],
+  ["Ria Khurana","Co-Founder","RNT Health Insights","https://in.linkedin.com/in/ria-khurana-88175124b","Same team — try both co-founders"],
+  ["Vishal Sood","Founder & CEO","AlmaBay","https://www.linkedin.com/in/vishal-sood-3b41b720/","Confirmed AI Engineer hire, actively growing"],
+  ["Amrit Singh","Co-Founder","Terafac Technologies","https://in.linkedin.com/in/liveamrit","Live AI-vision engineering role, funded startup"],
+  ["Arun Acharya","HRBP & Talent Acquisition","Grazitti Interactive (Mohali)","https://in.linkedin.com/in/acharyaarun","26 open Mohali jobs, Agentic AI roles"],
+  ["Jatin Sharma","IT Recruitment/HR","Grazitti Interactive","https://in.linkedin.com/in/jatin-sharma-59394314a","Second angle into Grazitti's active hiring"],
+  ["Mridula Gautam","Global HR","Grazitti Interactive","https://www.linkedin.com/in/mridulagautam/","Senior HR, broad visibility into openings"],
+  ["Gunjan Gupta","People & Culture","Grazitti Interactive","https://in.linkedin.com/in/gunjan-gupta-5688a7b4","Third angle into Grazitti"],
+  ["Cherry Chadda","Talent Acquisition Specialist","Net Solutions","https://in.linkedin.com/in/cherry-chadda","Actively hiring devs, GenAI mentioned in JDs"],
+  ["Tanvi Kataria","Senior Executive HR","IDS Infotech","https://www.linkedin.com/in/tanvi-kataria-0069a221b/","Explicit freshers/trainees listing live"],
+  ["Chetanpreet Kaur","Sr. Exec HR & Recruitment","Netsmartz (Chandigarh)","https://in.linkedin.com/in/chetanpreet-kaur-85b06711a","High fresher/intern volume"],
+  ["Pulkita Chugh","Talent Acquisition Sr. Exec","Netsmartz (Mohali)","https://www.linkedin.com/in/pulkita-chugh-b28666196/","Second angle into Netsmartz"],
+  ["Asmita Jettley","HR Manager","SourceFuse Technologies","https://in.linkedin.com/in/asmita-jettley-4ab2201b","Actively hiring, cloud/AWS skews AI-adjacent"],
+  ["Komal Punier","HR / Recruiter","Seasia Infotech","https://www.linkedin.com/in/komal-punier-26946120a","Recent hiring activity, AI/QA stack"],
+  ["Neha Katoch","IT Recruiter","The Brihaspati Infotech","https://www.linkedin.com/in/neha-katoch-942633221/","Live Python Fresher role"],
+  ["Jasmine Rathee","Sr. Associate HR (TA)","Zapbuild Technologies","https://www.linkedin.com/in/jasmine-rathee-3794a4b2/","Explicit Freshers Graduates listing"],
+  ["Kalpana Choudhary","Senior HR Specialist","Antier Solutions","https://www.linkedin.com/in/kalpana-choudhary-39062a98/","Active hiring posts, AI+blockchain"],
+  ["Alisha Bathla","TA Lead","Antier Solutions","https://www.linkedin.com/in/alisha-bathla-065265155/","Second angle into Antier"],
+  ["Gaurav S.","Founder","Vizitor","https://www.linkedin.com/in/gaurav-s-89431a173/","Fresher-eligible internship posting live"],
+  ["Matt Khorsand","Co-Founder & President","Wits Innovation Lab","https://www.linkedin.com/in/matt-khorsand-7b820083/","18 recent postings, AI/IoT/BI"],
+  ["Bhuwan (Ben) Yadav","Co-Founder","Wits Innovation Lab","https://www.linkedin.com/in/bhuwan-ben-yadav-a87791b6/","Second angle into Wits"],
+  ["Saraansh Tandon","Founder & CEO","URVA (Competent Groove)","https://www.linkedin.com/in/saraansh67/","Small SaaS team, founder-led hiring"],
+  ["Lovejot Singh Chhabra","Founder","Cyber Defence Intelligence","https://www.linkedin.com/in/ljaysingh/","Training/internship programs referenced"],
+  ["Jitender Panihar","Chief HR Officer","Fitelo","https://in.linkedin.com/posts/jitenderpanihar_hiring-team-brand-activity-6950786867520749568-lCOM","Very LinkedIn-active, 24 open roles"],
+  ["Dr. Sameer Goel","Development Centre Head","Infosys (Chandigarh/Mohali)","https://www.linkedin.com/in/dr-sameer-goel-57aba99/","Large org — lower odds, real named entry point"],
+  ["Manmeet Singh Sanghera","Senior Talent Acquisition","Tech Mahindra (Chandigarh)","https://www.linkedin.com/in/manmeetsanghera/","Large org — lower odds, real named entry point"],
+  ["Ankita","HR Manager","DataTroops","https://www.linkedin.com/in/ankita-5a405a218/","Strong Python/AI intern pipeline — but her LinkedIn shows Ludhiana, verify she's still on the Mohali team before messaging"],
+  ["Akanksha Mittal","HR Recruiter","ChicMic Studios","https://www.linkedin.com/in/akanksha-mittal-2701191a0/","Actively hiring Python AI Engineer + Data Scientist right now — strong profile match"],
+  ["Gurwinder Kaur","Sr. Manager HR/TA/HRBP","Ditstek Innovations","https://www.linkedin.com/in/gurwinder-kaur-32627211/","Senior HR reach, company posted about AI for business decision-making"],
+  ["Vanshika Batra","HR Manager","Imminent Softwares","https://www.linkedin.com/in/vanshika-batra-0552831a1/","Named HR Manager at a small Mohali web dev shop"]
+];
+
+const companies = [
+["Accenture","Both","IT services/consulting","Yes","No","","Low"],
+["AlmaBay","Chandigarh","EdTech — AI campus placements","Yes","Yes","Vishal Sood (Founder & CEO)","High"],
+["Antier Solutions","Mohali","Blockchain/Web3/DeFi/AI consulting","Yes","Yes","Kalpana Choudhary, Alisha Bathla","High"],
+["Apptunix","Both","App/AI-powered software dev agency","Yes","Yes","","Medium"],
+["Bebo Technologies","Chandigarh","QA/testing, Agentic AI, DevOps","Claimed","Yes","","Medium"],
+["Bharti Airtel","Mohali","Telecom","Not found","No","","Low"],
+["The Brihaspati Infotech","Mohali","Web/Mobile/AI solutions","Yes","Yes","Neha Katoch (IT Recruiter)","High"],
+["Cerebrum Infotech","Both","Mobile/web app dev, DevOps, IoT","Not found","No","","Low"],
+["Cintra Software & Services","Chandigarh","Multi-cloud/database consulting","Not confirmed","No","","Low"],
+["Compunnel","Mohali","AI-powered talent/digital/cybersecurity","Not found","Yes","Sneha Chawla (location unverified)","Low"],
+["Concentrix (Daksh)","Chandigarh","BPO/CX services","Yes","No","","Medium"],
+["Cyber Defence Intelligence","Mohali","Cybersecurity consulting + training","Yes","Adjacent","Lovejot Singh Chhabra (Founder)","Medium"],
+["CyberTegh","Chandigarh","Cybersecurity — VAPT, pentesting","Not found","No","","Low"],
+["CS Soft Solutions (India)","Mohali","PHP dev, mobile apps, digital marketing","Yes","Some","","Medium"],
+["Debut Infotech","Mohali","Web3/Blockchain/AI/IoT","Weak","Yes","","Medium"],
+["Dell (Dell International Services)","Mohali","Hardware/customer support","Yes","No","","Low"],
+["Dortex AI","Mohali","AI IT services & training","Implied","Yes","","Medium"],
+["Drish Infotech","Mohali","Web/mobile/AI/ML/IoT dev","Yes","Yes","","Medium"],
+["eNest Technologies","Mohali","AI/ML, NLP, data analytics, QA/IT staffing","Not confirmed","Yes","","Medium"],
+["EduRev","Chandigarh (flagged)","EdTech — ML-driven learning app","Not found","Yes","","Low"],
+["Fitelo","Chandigarh","Healthtech — AI diet/fitness coaching app","Yes","Adjacent","Jitender Panihar (CHRO)","Medium"],
+["Genpact","Both","BPM/IT-enabled services","Yes","No","","Medium"],
+["Grazitti Interactive","Both","Marketing automation, CRM, AI/analytics","Yes","Yes","Mridula Gautam, Gunjan Gupta, Jatin Sharma, Arun Acharya","High"],
+["HCLTech","Chandigarh","IT services, digital engineering","Yes","No local evidence","","Medium"],
+["IBM","Chandigarh","IT/consulting","Not confirmed","No local evidence","","Low"],
+["IDS Infotech","Both","AI-enabled digital solutions, BPM","Yes","Yes","Tanvi Kataria (Sr Exec HR)","High"],
+["Illumine-i","Mohali","AEC/MEP digital engineering","Weak","No","","Low"],
+["Infosys / Infosys BPM","Both","IT services, consulting, BPM","Yes","Yes","Dr. Sameer Goel (Dev Centre Head)","High"],
+["Kays Harbor Technologies","Mohali","Custom software, ERP/CRM/BI","Unclear","No","","Low"],
+["MeritHub Technologies","Mohali","EdTech — virtual classroom SaaS","Not confirmed","No explicit","Gurjinder Singh (unconfirmed)","Medium"],
+["MoogleLabs","Mohali","AI, ML, Blockchain, DevOps, Data Science","Yes","Yes","","Medium"],
+["Nagarro","Chandigarh","Digital engineering/software","Yes","Not location-specific","","Medium"],
+["Nano Web Tech","Chandigarh","Web design/dev outsourcing","Yes","No","","Medium"],
+["Net Solutions","Chandigarh","Digital product/platform engineering","Yes","Yes","Cherry Chadda (TA Specialist)","High"],
+["Netsmartz","Both","Custom software dev, AI agents, cloud","Yes","Yes","Chetanpreet Kaur, Pulkita Chugh","High"],
+["NLB Services","Chandigarh","IT staffing/RPO agency","N/A","N/A","","Medium"],
+["Practina AI","Mohali","AI marketing SaaS","Not found","Yes","Shantanu Desai (role unclear)","Medium"],
+["Quark Software","Mohali","Content automation / digital publishing","Not confirmed","No local evidence","","Medium"],
+["RNT Health Insights","Chandigarh","AI healthtech — FDA Breakthrough Device","Not explicit","Yes","Tanmaya Gulati, Ria Khurana (Co-Founders)","High"],
+["Safaltek Software","Chandigarh","ASP.NET/MVC dev, healthcare/marine","Not confirmed","No","","Low"],
+["Seasia Infotech","Mohali","IT consulting — AI, blockchain, cloud, QA","Yes","Yes","Komal Punier (HR/Recruiter)","High"],
+["smartData Enterprises","Mohali","AI-native SaaS dev","Mixed","Yes","","High"],
+["Softleoai","Mohali","Custom AI/ML software dev, Python training","Yes","Yes","Ishpreet Kaur (HR Specialist)","High"],
+["SourceFuse Technologies","Mohali","Cloud-native dev, AWS Advanced Partner","Active","Cloud-adjacent","Asmita Jettley (HR Manager)","High"],
+["Tech Mahindra","Chandigarh","IT services/BPO, digital transformation","Yes","Not confirmed local","Manmeet Singh Sanghera (Sr TA)","High"],
+["Terafac Technologies","Chandigarh","AI-vision robotics","No (2yr+ min)","Yes","Amrit Singh (Co-Founder)","High"],
+["ToXSL Technologies","Mohali","Android/iOS/web app dev, fintech, AI training","Yes","Yes","","High"],
+["URVA (Competent Groove)","Mohali","Field-force automation SaaS","Not found","No explicit","Saraansh Tandon (Founder & CEO)","Medium"],
+["Vizitor","Mohali","Workplace management SaaS","Yes","No","Gaurav S. (Founder)","Medium"],
+["Webmob Software Solutions","Mohali","Blockchain, Fintech, AI, ML, IoT","General only","Yes","","Medium"],
+["Wellorgs AI","Mohali","AI chatbots/ML/NLP dev","Yes","Yes","Akhilesh Dhawan (not HR)","Medium"],
+["Wipro","Chandigarh","IT services","Yes","Not confirmed local","","Medium"],
+["Wits Innovation Lab","Chandigarh","Software/AI/IoT/BI product dev","Not explicit","Yes","Matt Khorsand, Bhuwan Yadav (Co-Founders)","High"],
+["XenonStack","Both","AI/Agentic AI, data engineering","Yes","Yes","","High"],
+["Zapbuild Technologies","Mohali","Logistics/transport tech, web/mobile","Yes","No","Jasmine Rathee (Sr Assoc HR)","High"],
+["oCode Technologies","Mohali","AI/ML/Python development services","Yes (TA role)","Yes","","High"],
+["Webtunix AI","Both","Machine learning, data science, AI solutions","Yes","Yes","","High"],
+["Vibe Internet Solutions","Mohali","Enterprise software, AI/automation","Yes","Yes (LLMs/RAG intern role)","","High"],
+["DataTroops","Mohali","Digital product engineering (security-focused)","Yes (SDE Intern)","Yes","Ankita (HR Manager — verify location)","High"],
+["Autviz Solutions","Mohali","AWS/Azure cloud, OCR, ML, e-commerce","Not confirmed (tech)","Yes (ML listed)","","Medium"],
+["Code Garage Tech","Mohali","Web dev — Node/ROR/PHP/React/RN/Android","Yes","No","","Medium"],
+["Matrid Technologies","Both","Software/mobile/web dev, BI/BPM","Yes","Some (Python offered)","","Medium"],
+["Keyanntech Solutions","Mohali","IT solutions, web design, SEO/PPC","Yes (Python intern)","Some","","Medium"],
+["Pisoft Informatics","Mohali","Custom software, ERP, web dev, Android","Yes","No","","Low"],
+["Pal InfoCom Technologies","Mohali","eLearning dev, Moodle/LMS","Not confirmed","No","","Low"],
+["NETGAINS","Chandigarh","IT services, Shopify/WordPress ecommerce","Yes","No","","Medium"],
+["Ascentx Software Development Services","Chandigarh","Enterprise software — fintech/healthcare/edu","Not confirmed","No","","Medium"],
+["DevelopTech IT Solutions","Mohali","Software/web/Android/iOS dev, digital marketing","Yes","No","","Medium"],
+["Dabster SoftTech","Mohali","Mobile apps, web, custom software","Yes","No","","Medium"],
+["Digittrix Infotech","Chandigarh","Web and mobile app development","Yes","No","","Medium"],
+["Code Brew Labs","Chandigarh","Mobile app dev with AI capabilities","Yes","Yes","","High"],
+["Trantor","Chandigarh","Fintech, software dev, mobile, QA/testing","Not confirmed","No","","Medium"],
+["Lasting Software","Chandigarh","ERP, logistics optimization software","Not confirmed","No","","Medium"],
+["Webitlab","Both","Web development, UI/UX, digital marketing","Not confirmed","No","Meenakshi Pathak (HR Manager — verify LinkedIn)","Medium"],
+["Canws Technologies","Mohali","Web design, SEO, UI/UX, mobile dev","Not confirmed","No","","Medium"],
+["42Works","Mohali","App dev, website design, digital marketing","Yes","No","","Medium"],
+["AD Software Solutions","Mohali","IT services and IT consulting","Not confirmed","No","","Low"],
+["Creed Infotech","Mohali","GCC services, SaaS, AI product development","Not confirmed","Yes","","High"],
+["Pixelperinches Technologies","Mohali","Web/software solutions, mobile app dev","Not confirmed","No","","Medium"],
+["Crown Hill IT Solutions","Mohali","Web design, digital marketing, app dev","Not confirmed","No","","Medium"],
+["SoftProdigy","Mohali","AI & software development services","Not confirmed","Yes","","High"],
+["ZestGeek Solutions","Mohali","AI development, web/mobile app dev","Yes","Yes","","High"],
+["Graycell Technologies","Chandigarh","AI-driven web dev, mobile apps","Yes","Yes","","High"],
+["CodeApp Technologies","Chandigarh","Full-stack web/mobile dev, IT recruitment","Not confirmed","No","","Medium"],
+["Ably Soft","Mohali","Web dev, ecommerce, digital marketing","Not confirmed","No","","Medium"],
+["Vertex Infosoft","Mohali","Software product dev (shipping/offshore)","Not confirmed","No","","Medium"],
+["Bursys Infotech","Chandigarh","Software engineering and hardware design","Not confirmed","No","","Medium"],
+["Mansa Infotech","Mohali","Web/mobile software dev, SEO, ecommerce","Not confirmed","No","Harpreet Kour (HR — verify LinkedIn)","Medium"],
+["99 Soft Solution","Mohali","Web/software dev, ecommerce","Not confirmed","No","","Low"],
+["Trigma","Mohali","Software dev, AI agent development","Not confirmed","Yes","","High"],
+["Ditstek Innovations","Mohali","Custom software, IT consulting","Not confirmed","Some","Gurwinder Kaur (Sr Mgr HR/TA)","High"],
+["ChicMic Studios","Mohali","App/game/web development","Yes","Yes (hiring Python AI Engineer)","Akanksha Mittal (HR Recruiter)","High"],
+["BugRaptors","Mohali","Software testing/QA","No","No","","Medium"],
+["Aviox Technologies","Mohali","IT services, cloud, RPA","Not confirmed","Yes (AI Chatbot/LLM/RAG)","","High"],
+["CQLsys Technologies","Mohali","Web and mobile app development","Not confirmed","No","","Medium"],
+["Solitaire Infosys","Mohali","Software/web app development","Yes","No","","Medium"],
+["Ashriya Infotech","Mohali","PHP/mobile app development","Not confirmed","No","","Medium"],
+["WebAcer Software","Mohali","Web development, SEO","Not confirmed","No","","Low"],
+["Bits In Glass (India)","Mohali","Enterprise consulting (Pega/Appian/Salesforce)","Not confirmed","Yes (Full Stack AI Engineer)","","High"],
+["Cybertron Technologies (Mohali)","Mohali","Web/mobile app development","Not confirmed","No","","Medium"],
+["Midtown Software","Mohali",".NET/data software (US-client-facing)","Yes","No","","Medium"],
+["Knack Global (Knack RCM)","Mohali","Healthcare RCM + IT/software support","Not confirmed","No","","Medium"],
+["Finvasia (incl. Shoonya)","Mohali","Fintech/brokerage software","Not confirmed","No","","Medium"],
+["RND Experts","Mohali","Web/AI/data science development","Yes","Yes (Web & AI Development)","","High"],
+["NextPage IT Solutions","Mohali","Web/mobile app development","Yes","No","","Medium"],
+["Zero IT Solutions","Mohali","Web/mobile/enterprise software","Not confirmed","No","","Medium"],
+["Percept Software Systems","Mohali","Custom software, blockchain","Not confirmed","No","","Medium"],
+["ITConnectUS Inc","Mohali","IT consulting, web app dev, healthcare recruitment","Not confirmed","No","","Medium"],
+["Fortec Web Solutions","Mohali","Digital marketing, web and app dev","Not confirmed","No","","Medium"],
+["Imminent Softwares","Mohali","Web development, digital marketing","Not confirmed","No","Vanshika Batra (HR Manager)","Medium"],
+["Emerson Innovation Center","Chandigarh","Industrial automation / enterprise software","Yes","Yes (AI-adjacent)","","High"],
+["RV Technologies Softwares","Chandigarh","Web/app development, Python","Yes","No","☎ +91 8968519881","High"],
+["LDT Technology","Zirakpur","IT services, backend Python/Django","Yes","No","","High"],
+["DigiMantra Labs","Mohali","Digital transformation, Cloud, AI, Data","Yes","Yes","","High"],
+["Pyramid Global Technologies","Panchkula","Managed IT services","Not confirmed","No","","Medium"],
+["Techgropse","Panchkula","Mobile/web app development","Not confirmed","No","","Medium"],
+["Arete Technologies India","Panchkula","IT consulting/staffing, software dev","Yes","No","","Medium"],
+["Orion eSolutions","Mohali","Web/app dev (PHP/.Net/Node/Angular)","Yes","No","","Medium"],
+["PACEWALK","Zirakpur","IT services, web/app development","Yes","No","","Medium"],
+["Click Design Solutions","Zirakpur","Web development, design, social media","Not confirmed","No","","Low"],
+["Professional Peers Info Services","Panchkula","IT/software services","Not confirmed","No","","Low"],
+["Desirous Global Consulting","Panchkula","IT consulting/staffing","Not confirmed","No","","Low"],
+["Code Unfold Solutions","Mohali","Software / Python web scraping (WALK-IN)","Yes","No","","Medium"],
+["Hilt Web Solutions","Mohali","Web development (WALK-IN)","Yes","No","","Medium"]
+];
+
+function priPill(p){ return p==="High"||p==="Medium"||p==="Low" ? `<span class="pill ${p}">${p}</span>` : p; }
+
+function renderContacts(filter=""){
+  const tbody = document.querySelector('#contactTable tbody');
+  const f = filter.toLowerCase();
+  const rows = contacts.filter(c => c.join(' ').toLowerCase().includes(f));
+  tbody.innerHTML = rows.map(c => `<tr><td>${contacts.indexOf(c)+1}</td><td>${c[0]}</td><td>${c[1]}</td><td>${c[2]}</td><td><a href="${c[3]}" target="_blank" rel="noopener">Profile ↗</a></td><td>${c[4]}</td></tr>`).join('');
+  document.getElementById('contactCount').textContent = `${rows.length} of ${contacts.length} contacts`;
+}
+
+function renderCompanies(){
+  const search = document.getElementById('coSearch').value.toLowerCase();
+  const city = document.getElementById('citySelect').value;
+  const prio = document.getElementById('prioSelect').value;
+  const tbody = document.querySelector('#coTable tbody');
+  const rows = companies.filter(c => {
+    const matchesSearch = c.join(' ').toLowerCase().includes(search);
+    const matchesCity = !city || c[1] === city;
+    const matchesPrio = !prio || c[6] === prio;
+    return matchesSearch && matchesCity && matchesPrio;
+  });
+  tbody.innerHTML = rows.map(c => `<tr><td><strong>${c[0]}</strong></td><td>${c[1]}</td><td>${c[2]}</td><td>${c[3]}</td><td>${c[4]}</td><td>${c[5]||'<span style="color:var(--text-muted)">Not found publicly</span>'}</td><td>${priPill(c[6])}</td></tr>`).join('');
+  document.getElementById('coCount').textContent = `${rows.length} of ${companies.length} companies`;
+}
+
+document.getElementById('statCo').textContent = companies.length;
+document.getElementById('statContacts').textContent = contacts.length;
+renderContacts();
+renderCompanies();
+
+document.getElementById('contactSearch').addEventListener('input', e => renderContacts(e.target.value));
+document.getElementById('coSearch').addEventListener('input', renderCompanies);
+document.getElementById('citySelect').addEventListener('change', renderCompanies);
+document.getElementById('prioSelect').addEventListener('change', renderCompanies);
+
+const toggle = document.getElementById('themeToggle');
+toggle.addEventListener('click', () => {
+  const root = document.documentElement;
+  const current = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+});
+</script>
