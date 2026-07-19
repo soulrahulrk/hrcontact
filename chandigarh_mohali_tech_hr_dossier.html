@@ -102,6 +102,15 @@
   .pill.High{background:var(--pri-high-bg); color:var(--pri-high);}
   .pill.Medium{background:var(--pri-med-bg); color:var(--pri-med);}
   .pill.Low{background:var(--pri-low-bg); color:var(--pri-low);}
+  .tickcell{text-align:center; width:2rem;}
+  .tickcell input[type="checkbox"]{width:1.05rem; height:1.05rem; accent-color:var(--accent); cursor:pointer;}
+  tr.done-row{opacity:0.45;}
+  tr.done-row td:not(.tickcell){text-decoration:line-through; text-decoration-thickness:1px;}
+  .hide-done tr.done-row{display:none;}
+  .tickbar{display:flex; align-items:center; gap:0.6rem; margin:0 0 0.7rem; font-size:0.88rem; color:var(--text-muted);}
+  .tickbar button{background:var(--surface); border:1px solid var(--border); color:var(--text);
+    border-radius:8px; padding:0.35rem 0.7rem; font-size:0.85rem; cursor:pointer;}
+  .tickbar button:hover{border-color:var(--accent);}
   .rowcount{font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-size:0.78rem; color:var(--text-muted); margin-bottom:0.6rem;}
   footer{
     border-top:1px solid var(--border); padding-top:1.2rem; margin-top:1rem;
@@ -158,14 +167,15 @@
 
   <section id="shortlist">
     <h2>Priority outreach shortlist — message these first</h2>
-    <p class="section-note">Sorted by realistic reply probability. Each row links straight to the person's LinkedIn profile.</p>
+    <p class="section-note">Sorted by realistic reply probability. Each row links straight to the person's LinkedIn profile. Tick the box once you've messaged someone — ticked rows fade, drop to the bottom, and stay ticked next time you open this file (saved in this browser).</p>
     <div class="controls">
       <input type="search" id="contactSearch" placeholder="Search name, company, or designation…">
+      <div class="tickbar"><button type="button" id="hrHideBtn">Hide done</button><span id="hrDoneCount"></span></div>
     </div>
     <div class="rowcount" id="contactCount"></div>
     <div class="table-scroll">
       <table id="contactTable">
-        <thead><tr><th>#</th><th>Name</th><th>Designation</th><th>Company</th><th>LinkedIn</th><th>Why message first</th></tr></thead>
+        <thead><tr><th title="tick when messaged">✔</th><th>Name</th><th>Designation</th><th>Company</th><th>LinkedIn</th><th>Why message first</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -173,40 +183,51 @@
 
   <section id="gotomorrow">
     <h2>⭐ Go tomorrow / apply this week — Python fresher action + contact sheet</h2>
-    <p class="section-note">One consolidated <strong>action + contact sheet</strong>: who to call/email, their website, and a <strong>Google Maps link</strong> for every address. As of <strong>2026-07-20</strong>; tomorrow (Tue 2026-07-21) is a working day, so Mon–Sat walk-ins apply.</p>
+    <p class="section-note">One consolidated <strong>action + contact sheet</strong> (35 companies): who to call/email, their website, and a <strong>Google Maps link</strong> for every address. As of <strong>2026-07-20</strong>. <strong>Tick the ✔ box</strong> once you've called / applied / visited — ticked companies fade and drop to the bottom (or hide entirely with the button below), and your ticks are remembered next time you open this file in the same browser.</p>
     <div style="background:var(--accent-soft); border:1px solid var(--accent); border-radius:12px; padding:0.85rem 1.1rem; margin-bottom:1rem; font-size:0.92rem; color:var(--text);">
       ⚠️ <strong>Verify before you travel.</strong> Every number/email below is from a <strong>public source</strong> (company sites, JustDial/IndiaMART/Sulekha, job listings) — <strong>none guessed</strong>. Walk-in timings come from job boards, so <strong>call or email first</strong> to confirm the slot and get the exact floor/room. A "-" or "apply via …" means no direct public phone/email existed — use the portal.
     </div>
     <p style="font-size:0.88rem; margin:0 0 0.8rem; color:var(--text-muted);"><strong>Type:</strong> <span class="pill Medium">WALK-IN</span> direct walk-in · <span class="pill High">AI/Python</span> strong AI/Python fresher target · <span class="pill Low">Apply</span> live role, apply online.</p>
-    <div class="table-scroll" style="margin-bottom:1.6rem;">
+    <div class="tickbar"><button type="button" id="coHideBtn">Hide done</button><span id="coDoneCount"></span></div>
+    <div class="table-scroll" style="margin-bottom:1.6rem;" id="actionScroll">
       <table>
-        <thead><tr><th>Company</th><th>Call</th><th>Email / Apply</th><th>Website</th><th>Address (map)</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Code Unfold Solutions</strong> <span class="pill Medium">WALK-IN</span></td><td>☎ +91 79886 72156</td><td>info@codeunfold.com</td><td><a href="https://codeunfold.com">codeunfold.com</a></td><td>SCO 529, Top Floor, Sector 70, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=SCO+529%2C+Top+Floor%2C+Sector+70%2C+Mohali+160071">map</a></td><td>Jr Python (web-scraping) freshers; walk-in Mon-Sat 11-5 (call first)</td></tr>
-          <tr><td><strong>Hilt Web Solutions</strong> <span class="pill Medium">WALK-IN</span></td><td>☎ +91 172 402 8670</td><td>hiltweb@gmail.com</td><td><a href="https://hiltweb.com">hiltweb.com</a></td><td>SCO 31, Franco Hotel Rd, Sector 55, Phase 1, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=SCO+31%2C+Franco+Hotel+Rd%2C+Sector+55%2C+Phase+1%2C+Mohali+160055">map</a></td><td>Fresher dev roles; walk-in Mon-Sat 11-5 (email resume first)</td></tr>
-          <tr><td><strong>Softleoai</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 99889 11190</td><td>hr@softleoai.com</td><td><a href="https://softleoai.com">softleoai.com</a></td><td>D-141, Phase 7, Sector 73, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=D-141%2C+Phase+7%2C+Sector+73%2C+Mohali+160055">map</a></td><td>Active Python/AI-ML internship pipeline - top pick</td></tr>
-          <tr><td><strong>Grazitti Interactive</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 172 504 8500</td><td>careers via grazitti.com/company/careers</td><td><a href="https://grazitti.com">grazitti.com</a></td><td>Plot 19, HSIIDC Technology Park, Sector 22, Panchkula 134104 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+19%2C+HSIIDC+Technology+Park%2C+Sector+22%2C+Panchkula+134104">map</a></td><td>Also Landmark Plaza, Sector 62, Mohali; Agentic-AI roles</td></tr>
-          <tr><td><strong>XenonStack</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>apply via xenonstack.jobs</td><td><a href="https://xenonstack.com">xenonstack.com</a></td><td>#3038 Ajanta Enclave D, Sector 51-D, Chandigarh 160047 · <a href="https://www.google.com/maps/search/?api=1&query=%233038+Ajanta+Enclave+D%2C+Sector+51-D%2C+Chandigarh+160047">map</a></td><td>Pure-play AI; also STPI C-184, Phase 8, Sector 75, Mohali</td></tr>
-          <tr><td><strong>Net Solutions</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 172 4315000</td><td>careers via netsolutions.com/careers</td><td><a href="https://netsolutions.com">netsolutions.com</a></td><td>Site 15, Phase 1, Rajiv Gandhi Chandigarh Tech Park, Chandigarh 160101 · <a href="https://www.google.com/maps/search/?api=1&query=Site+15%2C+Phase+1%2C+Rajiv+Gandhi+Chandigarh+Tech+Park%2C+Chandigarh+160101">map</a></td><td>GenAI mentioned in JDs</td></tr>
-          <tr><td><strong>Antier Solutions</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 172 4008460</td><td>careers via antiersolutions.com/career</td><td><a href="https://antiersolutions.com">antiersolutions.com</a></td><td>E-196, Phase 8B, Industrial Area, Mohali 160059 · <a href="https://www.google.com/maps/search/?api=1&query=E-196%2C+Phase+8B%2C+Industrial+Area%2C+Mohali+160059">map</a></td><td>AI + blockchain; junior WFO roles</td></tr>
-          <tr><td><strong>smartData Enterprises</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>careers via smartdatainc.com/careers</td><td><a href="https://smartdatainc.com">smartdatainc.com</a></td><td>Plot I-23, IT City, Sector 83 Alpha, SAS Nagar, Mohali 140306 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+I-23%2C+IT+City%2C+Sector+83+Alpha%2C+SAS+Nagar%2C+Mohali+140306">map</a></td><td>AI-native; annual fresher program</td></tr>
-          <tr><td><strong>Netsmartz</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>careers via netsmartz.com/career-page</td><td><a href="https://netsmartz.com">netsmartz.com</a></td><td>Plot 10, Rajiv Gandhi Tech Park, Chandigarh 160101 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+10%2C+Rajiv+Gandhi+Tech+Park%2C+Chandigarh+160101">map</a></td><td>Also IT-C-6, Sector 67, Mohali; high intern volume</td></tr>
-          <tr><td><strong>SourceFuse Technologies</strong> <span class="pill High">AI/Python</span></td><td>☎ 0172 503 2044</td><td>careers via sourcefuse.com/careers</td><td><a href="https://sourcefuse.com">sourcefuse.com</a></td><td>C-204, Atrium, Sector 74, Mohali 140308 · <a href="https://www.google.com/maps/search/?api=1&query=C-204%2C+Atrium%2C+Sector+74%2C+Mohali+140308">map</a></td><td>AWS/cloud-AI adjacent</td></tr>
-          <tr><td><strong>IDS Infotech</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 172 520 2903</td><td>careers.idsil.com</td><td><a href="https://idsil.com">idsil.com</a></td><td>Rajiv Gandhi Chandigarh Tech Park, Chandigarh 160003 · <a href="https://www.google.com/maps/search/?api=1&query=Rajiv+Gandhi+Chandigarh+Tech+Park%2C+Chandigarh+160003">map</a></td><td>Explicit freshers/trainees listing</td></tr>
-          <tr><td><strong>Zapbuild Technologies</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 93010 10197</td><td>connect@zapbuild.com</td><td><a href="https://zapbuild.com">zapbuild.com</a></td><td>E-237, Phase 8B, Sector 74, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=E-237%2C+Phase+8B%2C+Sector+74%2C+Mohali+160071">map</a></td><td>Explicit 'Freshers Graduates' listing</td></tr>
-          <tr><td><strong>The Brihaspati Infotech</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 8146052020</td><td>hr@brihaspatitech.com</td><td><a href="https://brihaspatitech.com">brihaspatitech.com</a></td><td>Sector 74, Phase 8B, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=Sector+74%2C+Phase+8B%2C+Mohali+160055">map</a></td><td>Live Python Fresher role</td></tr>
-          <tr><td><strong>ToXSL Technologies</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 95691 27788</td><td>hr@toxsl.com</td><td><a href="https://toxsl.com">toxsl.com</a></td><td>C-127, Phase 8, Sector 73, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=C-127%2C+Phase+8%2C+Sector+73%2C+Mohali+160071">map</a></td><td>~90% freshers; job-guarantee training</td></tr>
-          <tr><td><strong>Apptunix</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>hr@apptunix.com</td><td><a href="https://apptunix.com">apptunix.com</a></td><td>3rd Floor, C-127, Phase 8, Sector 73, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=3rd+Floor%2C+C-127%2C+Phase+8%2C+Sector+73%2C+Mohali+160071">map</a></td><td>Python for AI/ML role advertised</td></tr>
-          <tr><td><strong>Seasia Infotech</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>info@seasiainfotech.com</td><td><a href="https://seasiainfotech.com">seasiainfotech.com</a></td><td>C-136, Industrial Area, Phase 8, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=C-136%2C+Industrial+Area%2C+Phase+8%2C+Mohali+160071">map</a></td><td>AI/blockchain/QA stack</td></tr>
-          <tr><td><strong>Terafac Technologies</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>contact via terafac.com/contact</td><td><a href="https://terafac.com">terafac.com</a></td><td>Industrial Area Phase 1, Chandigarh 160001 · <a href="https://www.google.com/maps/search/?api=1&query=Industrial+Area+Phase+1%2C+Chandigarh+160001">map</a></td><td>AI-vision robotics; funded</td></tr>
-          <tr><td><strong>Webtunix AI</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>contact via webtunix.com/contact-us</td><td><a href="https://webtunix.com">webtunix.com</a></td><td>Plot 204, Industrial Area Phase 8B, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+204%2C+Industrial+Area+Phase+8B%2C+Mohali+160055">map</a></td><td>ML/data-science company</td></tr>
-          <tr><td><strong>oCode Technologies</strong> <span class="pill Low">Apply</span></td><td>☎ +91 85805 41322</td><td>hi@ocode.co</td><td><a href="https://ocode.co">ocode.co</a></td><td>E-51, Phase 8, Industrial Area, Mohali 160059 · <a href="https://www.google.com/maps/search/?api=1&query=E-51%2C+Phase+8%2C+Industrial+Area%2C+Mohali+160059">map</a></td><td>Python + AI/ML/LLM dev; jobs line Mon-Fri 9-7</td></tr>
-          <tr><td><strong>LDT Technology</strong> <span class="pill Low">Apply</span></td><td>☎ +91 78890 64741</td><td>career@ldttechnology.com</td><td><a href="https://ldttechnology.com">ldttechnology.com</a></td><td>Zirakpur, Punjab · <a href="https://www.google.com/maps/search/?api=1&query=Zirakpur%2C+Punjab">map</a></td><td>Backend Python/Django</td></tr>
-          <tr><td><strong>DigiMantra Labs</strong> <span class="pill Low">Apply</span></td><td>☎ +91 172 613 1700</td><td>careers.digimantra.com</td><td><a href="https://digimantra.com">digimantra.com</a></td><td>Plot 8B, Sector 74, Industrial Area, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+8B%2C+Sector+74%2C+Industrial+Area%2C+Mohali+160055">map</a></td><td>Software Engineer Intern + Python</td></tr>
-          <tr><td><strong>RV Technologies</strong> <span class="pill Low">Apply</span></td><td>☎ +91 89685 19881</td><td>via rvtechnologies.com/contact-us</td><td><a href="https://rvtechnologies.com">rvtechnologies.com</a></td><td>Chandigarh · <a href="https://www.google.com/maps/search/?api=1&query=Chandigarh">map</a></td><td>Live Python Developer role</td></tr>
-          <tr><td><strong>Emerson</strong> <span class="pill Low">Apply</span></td><td>- (MNC)</td><td>apply via Naukri / talent.com</td><td><a href="https://emerson.com">emerson.com</a></td><td>IT Park, Chandigarh · <a href="https://www.google.com/maps/search/?api=1&query=IT+Park%2C+Chandigarh">map</a></td><td>React/Python 0-2 yrs + intern->FTE; no walk-in</td></tr>
-          <tr><td><strong>Vibe Internet Solutions</strong> <span class="pill Low">Apply</span></td><td>-</td><td>apply via Indeed / LinkedIn</td><td>-</td><td>Plot C-203, Phase 8B, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+C-203%2C+Phase+8B%2C+Mohali+160055">map</a></td><td>AI/Python Intern (LLM/RAG) Rs20k/mo</td></tr>
-          <tr><td><strong>Arete Technologies</strong> <span class="pill Low">Apply</span></td><td>-</td><td>apply via Internshala</td><td><a href="https://arete-tech.com">arete-tech.com</a></td><td>Square Building, Plot 201, Industrial Area Phase 2, Panchkula 134113 · <a href="https://www.google.com/maps/search/?api=1&query=Square+Building%2C+Plot+201%2C+Industrial+Area+Phase+2%2C+Panchkula+134113">map</a></td><td>Fresher software/IT roles</td></tr>
+        <thead><tr><th title="tick when contacted/visited">✔</th><th>Company</th><th>Call</th><th>Email / Apply</th><th>Website</th><th>Address (map)</th><th>Notes</th></tr></thead>
+        <tbody id="actionBody">
+          <tr data-key="co::code-unfold-solutions"><td class="tickcell"></td><td><strong>Code Unfold Solutions</strong> <span class="pill Medium">WALK-IN</span></td><td>☎ +91 79886 72156</td><td>info@codeunfold.com</td><td><a href="https://codeunfold.com">codeunfold.com</a></td><td>SCO 529, Top Floor, Sector 70, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=SCO+529%2C+Top+Floor%2C+Sector+70%2C+Mohali+160071">map</a></td><td>Jr Python (web-scraping) freshers; walk-in Mon-Sat 11-5 (call first)</td></tr>
+          <tr data-key="co::hilt-web-solutions"><td class="tickcell"></td><td><strong>Hilt Web Solutions</strong> <span class="pill Medium">WALK-IN</span></td><td>☎ +91 172 402 8670</td><td>hiltweb@gmail.com</td><td><a href="https://hiltweb.com">hiltweb.com</a></td><td>SCO 31, Franco Hotel Rd, Sector 55, Phase 1, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=SCO+31%2C+Franco+Hotel+Rd%2C+Sector+55%2C+Phase+1%2C+Mohali+160055">map</a></td><td>Fresher dev roles; walk-in Mon-Sat 11-5 (email resume first)</td></tr>
+          <tr data-key="co::softleoai"><td class="tickcell"></td><td><strong>Softleoai</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 99889 11190</td><td>hr@softleoai.com</td><td><a href="https://softleoai.com">softleoai.com</a></td><td>D-141, Phase 7, Sector 73, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=D-141%2C+Phase+7%2C+Sector+73%2C+Mohali+160055">map</a></td><td>Active Python/AI-ML internship pipeline - top pick</td></tr>
+          <tr data-key="co::grazitti-interactive"><td class="tickcell"></td><td><strong>Grazitti Interactive</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 172 504 8500</td><td>apply.workable.com/grazitti-interactive</td><td><a href="https://grazitti.com">grazitti.com</a></td><td>Plot 19, HSIIDC Technology Park, Sector 22, Panchkula 134104 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+19%2C+HSIIDC+Technology+Park%2C+Sector+22%2C+Panchkula+134104">map</a></td><td>Also Landmark Plaza, Sector 62, Mohali; Agentic-AI roles</td></tr>
+          <tr data-key="co::xenonstack"><td class="tickcell"></td><td><strong>XenonStack</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>apply via xenonstack.jobs</td><td><a href="https://xenonstack.com">xenonstack.com</a></td><td>STPI Incubation Center, C-184, Phase 8, Sector 75, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=STPI+Incubation+Center%2C+C-184%2C+Phase+8%2C+Sector+75%2C+Mohali+160071">map</a></td><td>Pure-play AI; also Sector 51-D & 17A, Chandigarh</td></tr>
+          <tr data-key="co::net-solutions"><td class="tickcell"></td><td><strong>Net Solutions</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 172 4315000</td><td>careers via netsolutions.com/careers</td><td><a href="https://netsolutions.com">netsolutions.com</a></td><td>Site 15, Phase 1, Rajiv Gandhi Chandigarh Tech Park, Chandigarh 160101 · <a href="https://www.google.com/maps/search/?api=1&query=Site+15%2C+Phase+1%2C+Rajiv+Gandhi+Chandigarh+Tech+Park%2C+Chandigarh+160101">map</a></td><td>GenAI mentioned in JDs</td></tr>
+          <tr data-key="co::antier-solutions"><td class="tickcell"></td><td><strong>Antier Solutions</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 172 4008460</td><td>careers via antiersolutions.com/career</td><td><a href="https://antiersolutions.com">antiersolutions.com</a></td><td>E-196, Phase 8B, Industrial Area, Mohali 160059 · <a href="https://www.google.com/maps/search/?api=1&query=E-196%2C+Phase+8B%2C+Industrial+Area%2C+Mohali+160059">map</a></td><td>AI + blockchain; junior WFO roles</td></tr>
+          <tr data-key="co::smartdata-enterprises"><td class="tickcell"></td><td><strong>smartData Enterprises</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>careers via smartdatainc.com/careers</td><td><a href="https://smartdatainc.com">smartdatainc.com</a></td><td>Plot I-23, IT City, Sector 83 Alpha, SAS Nagar, Mohali 140306 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+I-23%2C+IT+City%2C+Sector+83+Alpha%2C+SAS+Nagar%2C+Mohali+140306">map</a></td><td>AI-native; annual fresher program</td></tr>
+          <tr data-key="co::netsmartz"><td class="tickcell"></td><td><strong>Netsmartz</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>careers via netsmartz.com/career-page</td><td><a href="https://netsmartz.com">netsmartz.com</a></td><td>Plot 10, Rajiv Gandhi Tech Park, Chandigarh 160101 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+10%2C+Rajiv+Gandhi+Tech+Park%2C+Chandigarh+160101">map</a></td><td>Also IT-C-6, Sector 67, Mohali; high intern volume</td></tr>
+          <tr data-key="co::sourcefuse-technologies"><td class="tickcell"></td><td><strong>SourceFuse Technologies</strong> <span class="pill High">AI/Python</span></td><td>☎ 0172 503 2044</td><td>careers via sourcefuse.com/careers</td><td><a href="https://sourcefuse.com">sourcefuse.com</a></td><td>C-204, Atrium, Sector 74, Mohali 140308 · <a href="https://www.google.com/maps/search/?api=1&query=C-204%2C+Atrium%2C+Sector+74%2C+Mohali+140308">map</a></td><td>AWS/cloud-AI adjacent</td></tr>
+          <tr data-key="co::ids-infotech"><td class="tickcell"></td><td><strong>IDS Infotech</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 172 520 2903</td><td>careers.idsil.com</td><td><a href="https://idsil.com">idsil.com</a></td><td>Rajiv Gandhi Chandigarh Tech Park, Chandigarh 160003 · <a href="https://www.google.com/maps/search/?api=1&query=Rajiv+Gandhi+Chandigarh+Tech+Park%2C+Chandigarh+160003">map</a></td><td>Explicit freshers/trainees listing</td></tr>
+          <tr data-key="co::zapbuild-technologies"><td class="tickcell"></td><td><strong>Zapbuild Technologies</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 93010 10197</td><td>connect@zapbuild.com</td><td><a href="https://zapbuild.com">zapbuild.com</a></td><td>E-237, Phase 8B, Sector 74, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=E-237%2C+Phase+8B%2C+Sector+74%2C+Mohali+160071">map</a></td><td>Explicit Freshers-Graduates listing</td></tr>
+          <tr data-key="co::the-brihaspati-infotech"><td class="tickcell"></td><td><strong>The Brihaspati Infotech</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 8146052020</td><td>hr@brihaspatitech.com</td><td><a href="https://brihaspatitech.com">brihaspatitech.com</a></td><td>Sector 74, Phase 8B, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=Sector+74%2C+Phase+8B%2C+Mohali+160055">map</a></td><td>Live Python Fresher role</td></tr>
+          <tr data-key="co::toxsl-technologies"><td class="tickcell"></td><td><strong>ToXSL Technologies</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 95691 27788</td><td>hr@toxsl.com</td><td><a href="https://toxsl.com">toxsl.com</a></td><td>C-127, Phase 8, Sector 73, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=C-127%2C+Phase+8%2C+Sector+73%2C+Mohali+160071">map</a></td><td>~90% freshers; job-guarantee training</td></tr>
+          <tr data-key="co::apptunix"><td class="tickcell"></td><td><strong>Apptunix</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>hr@apptunix.com</td><td><a href="https://apptunix.com">apptunix.com</a></td><td>3rd Floor, C-127, Phase 8, Sector 73, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=3rd+Floor%2C+C-127%2C+Phase+8%2C+Sector+73%2C+Mohali+160071">map</a></td><td>Python for AI/ML role advertised</td></tr>
+          <tr data-key="co::seasia-infotech"><td class="tickcell"></td><td><strong>Seasia Infotech</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>info@seasiainfotech.com</td><td><a href="https://seasiainfotech.com">seasiainfotech.com</a></td><td>C-136, Industrial Area, Phase 8, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=C-136%2C+Industrial+Area%2C+Phase+8%2C+Mohali+160071">map</a></td><td>AI/blockchain/QA stack</td></tr>
+          <tr data-key="co::terafac-technologies"><td class="tickcell"></td><td><strong>Terafac Technologies</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>contact via terafac.com/contact</td><td><a href="https://terafac.com">terafac.com</a></td><td>Industrial Area Phase 1, Chandigarh 160001 · <a href="https://www.google.com/maps/search/?api=1&query=Industrial+Area+Phase+1%2C+Chandigarh+160001">map</a></td><td>AI-vision robotics; funded</td></tr>
+          <tr data-key="co::webtunix-ai"><td class="tickcell"></td><td><strong>Webtunix AI</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>contact via webtunix.com/contact-us</td><td><a href="https://webtunix.com">webtunix.com</a></td><td>Plot 204, Industrial Area Phase 8B, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+204%2C+Industrial+Area+Phase+8B%2C+Mohali+160055">map</a></td><td>ML/data-science company</td></tr>
+          <tr data-key="co::wits-innovation-lab"><td class="tickcell"></td><td><strong>Wits Innovation Lab</strong> <span class="pill High">AI/Python</span></td><td>☎ +91 62833 69881</td><td>info@thewitslab.com</td><td><a href="https://thewitslab.com">thewitslab.com</a></td><td>SCO 73-B, 1st Floor, City Heart, Mohali 140301 · <a href="https://www.google.com/maps/search/?api=1&query=SCO+73-B%2C+1st+Floor%2C+City+Heart%2C+Mohali+140301">map</a></td><td>Dedicated HR enquiries line; AI/IoT/BI; both co-founders on LinkedIn</td></tr>
+          <tr data-key="co::mooglelabs"><td class="tickcell"></td><td><strong>MoogleLabs</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>info@mooglelabs.com</td><td><a href="https://mooglelabs.com">mooglelabs.com</a></td><td>I-24, 2nd Floor, Sector 83 Alpha, IT City, Mohali 140306 · <a href="https://www.google.com/maps/search/?api=1&query=I-24%2C+2nd+Floor%2C+Sector+83+Alpha%2C+IT+City%2C+Mohali+140306">map</a></td><td>AI/ML + GenAI services (Seasia group)</td></tr>
+          <tr data-key="co::rnt-health-insights"><td class="tickcell"></td><td><strong>RNT Health Insights</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>via rntinsights.com</td><td><a href="https://rntinsights.com">rntinsights.com</a></td><td>House 1111, Sector 19B, Chandigarh 160019 · <a href="https://www.google.com/maps/search/?api=1&query=House+1111%2C+Sector+19B%2C+Chandigarh+160019">map</a></td><td>FDA-breakthrough AI healthtech; message both co-founders on LinkedIn</td></tr>
+          <tr data-key="co::almabay"><td class="tickcell"></td><td><strong>AlmaBay</strong> <span class="pill High">AI/Python</span></td><td>-</td><td>via almabay.com/contact-us</td><td><a href="https://almabay.com">almabay.com</a></td><td>#441, Level 4, Tricity Plaza, Peer Muchalla, Zirakpur 140603 · <a href="https://www.google.com/maps/search/?api=1&query=%23441%2C+Level+4%2C+Tricity+Plaza%2C+Peer+Muchalla%2C+Zirakpur+140603">map</a></td><td>Confirmed AI Engineer hire; founder reachable; also Plot J7, IT Park, Chandigarh</td></tr>
+          <tr data-key="co::ocode-technologies"><td class="tickcell"></td><td><strong>oCode Technologies</strong> <span class="pill Low">Apply</span></td><td>☎ +91 85805 41322</td><td>hi@ocode.co</td><td><a href="https://ocode.co">ocode.co</a></td><td>E-51, Phase 8, Industrial Area, Mohali 160059 · <a href="https://www.google.com/maps/search/?api=1&query=E-51%2C+Phase+8%2C+Industrial+Area%2C+Mohali+160059">map</a></td><td>Python + AI/ML/LLM dev; jobs line Mon-Fri 9-7</td></tr>
+          <tr data-key="co::ldt-technology"><td class="tickcell"></td><td><strong>LDT Technology</strong> <span class="pill Low">Apply</span></td><td>☎ +91 78890 64741</td><td>career@ldttechnology.com</td><td><a href="https://ldttechnology.com">ldttechnology.com</a></td><td>Zirakpur, Punjab · <a href="https://www.google.com/maps/search/?api=1&query=Zirakpur%2C+Punjab">map</a></td><td>Backend Python/Django</td></tr>
+          <tr data-key="co::digimantra-labs"><td class="tickcell"></td><td><strong>DigiMantra Labs</strong> <span class="pill Low">Apply</span></td><td>☎ +91 172 613 1700</td><td>careers.digimantra.com</td><td><a href="https://digimantra.com">digimantra.com</a></td><td>Plot 8B, Sector 74, Industrial Area, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+8B%2C+Sector+74%2C+Industrial+Area%2C+Mohali+160055">map</a></td><td>Software Engineer Intern + Python</td></tr>
+          <tr data-key="co::rv-technologies"><td class="tickcell"></td><td><strong>RV Technologies</strong> <span class="pill Low">Apply</span></td><td>☎ +91 89685 19881</td><td>via rvtechnologies.com/contact-us</td><td><a href="https://rvtechnologies.com">rvtechnologies.com</a></td><td>Chandigarh · <a href="https://www.google.com/maps/search/?api=1&query=Chandigarh">map</a></td><td>Live Python Developer role</td></tr>
+          <tr data-key="co::emerson"><td class="tickcell"></td><td><strong>Emerson</strong> <span class="pill Low">Apply</span></td><td>- (MNC)</td><td>apply via Naukri / talent.com</td><td><a href="https://emerson.com">emerson.com</a></td><td>IT Park, Chandigarh · <a href="https://www.google.com/maps/search/?api=1&query=IT+Park%2C+Chandigarh">map</a></td><td>React/Python 0-2 yrs + intern-to-FTE; no walk-in</td></tr>
+          <tr data-key="co::vibe-internet-solutions"><td class="tickcell"></td><td><strong>Vibe Internet Solutions</strong> <span class="pill Low">Apply</span></td><td>-</td><td>apply via Indeed / LinkedIn</td><td>-</td><td>Plot C-203, Phase 8B, Mohali 160055 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+C-203%2C+Phase+8B%2C+Mohali+160055">map</a></td><td>AI/Python Intern (LLM/RAG) Rs20k/mo</td></tr>
+          <tr data-key="co::arete-technologies"><td class="tickcell"></td><td><strong>Arete Technologies</strong> <span class="pill Low">Apply</span></td><td>-</td><td>apply via Internshala</td><td><a href="https://arete-tech.com">arete-tech.com</a></td><td>Square Building, Plot 201, Industrial Area Phase 2, Panchkula 134113 · <a href="https://www.google.com/maps/search/?api=1&query=Square+Building%2C+Plot+201%2C+Industrial+Area+Phase+2%2C+Panchkula+134113">map</a></td><td>Fresher software/IT roles</td></tr>
+          <tr data-key="co::debut-infotech"><td class="tickcell"></td><td><strong>Debut Infotech</strong> <span class="pill Low">Apply</span></td><td>☎ +91 98884 02396</td><td>info@debutinfotech.com</td><td><a href="https://debutinfotech.com">debutinfotech.com</a></td><td>Plot I-42, IT City Rd, Sector 101-A, JLPL, Mohali 140306 · <a href="https://www.google.com/maps/search/?api=1&query=Plot+I-42%2C+IT+City+Rd%2C+Sector+101-A%2C+JLPL%2C+Mohali+140306">map</a></td><td>Web3/Blockchain/AI</td></tr>
+          <tr data-key="co::urva-competent-groove"><td class="tickcell"></td><td><strong>URVA (Competent Groove)</strong> <span class="pill Low">Apply</span></td><td>☎ +91 90410 97979</td><td>hello@urva.co</td><td><a href="https://urva.co">urva.co</a></td><td>Mohali, Punjab · <a href="https://www.google.com/maps/search/?api=1&query=Mohali%2C+Punjab">map</a></td><td>Field-force SaaS; founder-led hiring</td></tr>
+          <tr data-key="co::cyber-defence-intelligence"><td class="tickcell"></td><td><strong>Cyber Defence Intelligence</strong> <span class="pill Low">Apply</span></td><td>☎ +91 77104 50011</td><td>via cyberintelligence.in/contact-us</td><td><a href="https://cyberintelligence.in">cyberintelligence.in</a></td><td>E-55, Phase 8, Industrial Area, Mohali 160071 · <a href="https://www.google.com/maps/search/?api=1&query=E-55%2C+Phase+8%2C+Industrial+Area%2C+Mohali+160071">map</a></td><td>Cybersecurity training/internships</td></tr>
+          <tr data-key="co::webmob-software-solutions"><td class="tickcell"></td><td><strong>Webmob Software Solutions</strong> <span class="pill Low">Apply</span></td><td>☎ +91 172 404 5981</td><td>info@webmobinfo.ch</td><td><a href="https://webmobinfo.ch">webmobinfo.ch</a></td><td>Bestech Business Tower-A, Suite 829, Sector 66, Mohali 160066 · <a href="https://www.google.com/maps/search/?api=1&query=Bestech+Business+Tower-A%2C+Suite+829%2C+Sector+66%2C+Mohali+160066">map</a></td><td>Fintech/AI; NOTE webmobtech.com is a different Ahmedabad firm</td></tr>
+          <tr data-key="co::vizitor"><td class="tickcell"></td><td><strong>Vizitor</strong> <span class="pill Low">Apply</span></td><td>-</td><td>hello@vizitor.co</td><td><a href="https://vizitorapp.com">vizitorapp.com</a></td><td>#694, Sector 82, JLPL, Mohali 140307 · <a href="https://www.google.com/maps/search/?api=1&query=%23694%2C+Sector+82%2C+JLPL%2C+Mohali+140307">map</a></td><td>Fresher-eligible internship; founder reachable</td></tr>
+          <tr data-key="co::fitelo"><td class="tickcell"></td><td><strong>Fitelo</strong> <span class="pill Low">Apply</span></td><td>-</td><td>contact@fitelo.co</td><td><a href="https://fitelo.co">fitelo.co</a></td><td>Chandigarh Tricity (exact office not public) · <a href="https://www.google.com/maps/search/?api=1&query=Chandigarh+Tricity+%28exact+office+not+public%29">map</a></td><td>24 open roles; CHRO very active on LinkedIn</td></tr>
         </tbody>
       </table>
     </div>
@@ -396,12 +417,62 @@ const companies = [
 
 function priPill(p){ return p==="High"||p==="Medium"||p==="Low" ? `<span class="pill ${p}">${p}</span>` : p; }
 
+/* ---- tick-box persistence: saved in THIS browser via localStorage.
+   Keys are name-based, so ticks survive when this file is updated/redeployed. ---- */
+const TICK_STORE = 'hrdb_ticks_v1';
+const getTicks = () => { try { return JSON.parse(localStorage.getItem(TICK_STORE)) || {}; } catch(e){ return {}; } };
+const saveTicks = t => localStorage.setItem(TICK_STORE, JSON.stringify(t));
+const isDone = key => !!getTicks()[key];
+const setDoneKey = (key, val) => { const t = getTicks(); if (val) t[key] = 1; else delete t[key]; saveTicks(t); };
+const slugKey = s => s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+
+function refreshTickState(tbody, countEl){
+  const rows = [...tbody.querySelectorAll('tr[data-key]')];
+  let done = 0;
+  rows.forEach(tr => {
+    const d = isDone(tr.dataset.key);
+    tr.classList.toggle('done-row', d);
+    const cb = tr.querySelector('.tickcell input');
+    if (cb) cb.checked = d;
+    if (d) done++;
+  });
+  // done rows sink to the bottom (relative order kept)
+  rows.filter(tr => tr.classList.contains('done-row')).forEach(tr => tbody.appendChild(tr));
+  if (countEl) countEl.textContent = done ? `${done} ticked done` : '';
+}
+
+function wireTickRows(tbody, countEl){
+  tbody.querySelectorAll('tr[data-key]').forEach(tr => {
+    const key = tr.dataset.key;
+    let cell = tr.querySelector('.tickcell');
+    if (!cell){ cell = document.createElement('td'); cell.className = 'tickcell'; tr.prepend(cell); }
+    if (!cell.querySelector('input')){
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.title = 'Tick when done';
+      cb.addEventListener('change', () => { setDoneKey(key, cb.checked); refreshTickState(tbody, countEl); });
+      cell.appendChild(cb);
+    }
+  });
+  refreshTickState(tbody, countEl);
+}
+
+function wireHideBtn(btnId, container){
+  const btn = document.getElementById(btnId);
+  if (!btn || !container) return;
+  btn.addEventListener('click', () => {
+    container.classList.toggle('hide-done');
+    btn.textContent = container.classList.contains('hide-done') ? 'Show done' : 'Hide done';
+  });
+}
+
 function renderContacts(filter=""){
   const tbody = document.querySelector('#contactTable tbody');
   const f = filter.toLowerCase();
   const rows = contacts.filter(c => c.join(' ').toLowerCase().includes(f));
-  tbody.innerHTML = rows.map(c => `<tr><td>${contacts.indexOf(c)+1}</td><td>${c[0]}</td><td>${c[1]}</td><td>${c[2]}</td><td><a href="${c[3]}" target="_blank" rel="noopener">Profile ↗</a></td><td>${c[4]}</td></tr>`).join('');
+  tbody.innerHTML = rows.map(c => `<tr data-key="hr::${slugKey(c[0]+'-'+c[2])}"><td class="tickcell"></td><td>${c[0]}</td><td>${c[1]}</td><td>${c[2]}</td><td><a href="${c[3]}" target="_blank" rel="noopener">Profile ↗</a></td><td>${c[4]}</td></tr>`).join('');
   document.getElementById('contactCount').textContent = `${rows.length} of ${contacts.length} contacts`;
+  wireTickRows(tbody, document.getElementById('hrDoneCount'));
 }
 
 function renderCompanies(){
@@ -423,6 +494,9 @@ document.getElementById('statCo').textContent = companies.length;
 document.getElementById('statContacts').textContent = contacts.length;
 renderContacts();
 renderCompanies();
+wireTickRows(document.getElementById('actionBody'), document.getElementById('coDoneCount'));
+wireHideBtn('coHideBtn', document.getElementById('actionScroll'));
+wireHideBtn('hrHideBtn', document.getElementById('contactTable').parentElement);
 
 document.getElementById('contactSearch').addEventListener('input', e => renderContacts(e.target.value));
 document.getElementById('coSearch').addEventListener('input', renderCompanies);
